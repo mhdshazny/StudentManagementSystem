@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model StudentManagementSystem.Models.StudentModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<h1>Create Student</h1>
+<hr />
+<div class="container-fluid">
+    <form asp-action="Create" method="post">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="DOB"></label>
+                        <input asp-for="DOB"  class="form-control" />
+                        <span asp-validation-for="DOB" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="Gender"></label>
+                        <input asp-for="Gender"  class="form-control" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="Address"></label>
+                        <input asp-for="Address"  class="form-control input-group" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email"  class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="Status"></label>
+                        <input asp-for="Status" class="form-control"  />
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="submit" value="Submit" class="btn btn-block btn-primary" />
+            </div>
+            <div class="col">
+                <a asp-action="Index" class="btn btn-block btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -20,8 +20,12 @@ namespace StudentManagementSystem.Models
         [Required]
 
         public string Address { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         public DateTime DOB { get; set; }
         public string Status { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }

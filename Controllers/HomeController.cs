@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Rotativa.AspNetCore;
 
 namespace StudentManagementSystem.Controllers
 {
@@ -23,6 +24,11 @@ namespace StudentManagementSystem.Controllers
         {
             List<StudentModel> Data = db.StudentData.ToList();
             return View(Data);
+        }
+        public IActionResult StudentReport()
+        {
+            List<StudentModel> Data = db.StudentData.ToList();
+            return new ViewAsPdf(Data);
         }
 
         [HttpGet]
